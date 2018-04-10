@@ -1,11 +1,11 @@
-## Fundamental text and font styling
+# Fundamental text and font styling
 
 - Font styles: Các thuộc tính tác động đến kiểu chữ văn bản, cỡ chữ và đậm hay nghiêng ...
 - Text layout styles: Các thuộc tính tác động đến bố cục văn bản như khoảng cách: dòng, từ, ký tự và căn chỉnh vị trí trong content box.
 
-### Fonts
+## Fonts
 
-#### Color
+### Color
 
 Thuộc tính *color* dùng để thiết lập màu cho nội dung element
 ```css
@@ -13,7 +13,7 @@ p {
     color: red;
 }
 ```
-#### Font families
+### Font families
 
 Thuộc tính *font-family* dùng để thiết lập kiểu chữ cho elements được chọn.
 ```css
@@ -42,7 +42,7 @@ p {
 
 Trong ví dụ trên nếu không có kiểu 'Trebuchet MS' trên máy tính, hệ thống tìm kiểu 'Verdana' trong danh sách và cứ thế cho đến khi tìm được kiểu chỉ định. Trong trường hợp không tìm được kiểu font nào trình duyệt sẽ áp dụng font mặc định là 'Times New Roman'.
 
-#### Font size
+### Font size
 
 Font size có thể được chỉ định các giá trị với hầu các đơn vị đo như đã đề cập ở phần [CSS values and units](), tuy nhiên hầu như ta thường sử dụng các đơn vị sau:
 
@@ -65,7 +65,7 @@ p {
 }
 ```
 
-#### Font style, font weight, text transform, and text decoration
+### Font style, font weight, text transform, and text decoration
 
 CSS cung cấp 4 thuộc tính phổ biến để chỉnh *the visual weight/emphasis of text*:
 * ```font-style```: Dùng để tắt/bật chế độ chữ nghiêng
@@ -109,9 +109,9 @@ p {
 }
 ```
 
-### Text layout
+## Text layout
 
-#### Text alignment
+### Text alignment
 
 Thuộc tính ```text-align``` được dùng để kiểm soát văn bản được căn chỉnh trong content box như thế nào, gồm có các giá trị sau:
 * ```left```
@@ -119,14 +119,14 @@ Thuộc tính ```text-align``` được dùng để kiểm soát văn bản đư
 * ```center```
 * ```justify```
 
-#### Line height
+### Line height
 
 Thuộc tính ```line-height``` dùng để đặt độ cao của mỗi dòng vòng văn bản - với bất kể giá trị nào trong đơn vị đo [CSS values and units](), nhưng khuyến khích dùng giá trị **1.5-2**
 ```css
 line-height: 1.5;
 ```
 
-#### Letter and word spacing
+### Letter and word spacing
 
 Thuộc tính ```letter-spacing``` và ```word-spacing``` cho phép ta đặt khoảng cách giữa các ký tự và khoảng cách giữa các từ trong văn bản.
 ```css
@@ -136,4 +136,53 @@ p::first-line {
 }
 ```
 
-#### [Other properties worth looking at](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+### [Other properties worth looking at](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+
+# Web fonts
+
+Cho phép bạn tải các custom fonts đi cùng với trang web của bạn, cho đa dạng font hơn so với các web safe fonts.
+
+Đầu tiên bạn có một khối ```@font-face``` đặt trên cùng CSS
+
+```css
+@font-face {
+  font-family: "myFont";
+  src: url("myFont.ttf");
+}
+```
+
+Sau đó bạn có thể chỉ định tên font-family được chỉ định trong @font-face để áp dụng lên bất cứ đâu bạn muốn:
+
+```css
+html {
+  font-family: "myFont", "Bitstream Vera Serif", serif;
+}
+```
+
+Có 2 điểm quan trọng cần nhớ về web fonts là:
+
+* Các trình duyệt hỗ trợ các định dạnh font khác nhau, bạn cần nhiều định dạng font để hỗ trợ trình duyệt.
+
+* Fonts thường không miễn phí.
+
+## Sinh định dạng font cho trình duyệt như thế nào
+
+* Bước 1: Tìm một loại font nào đó
+
+* Bước 2: Sử dụng tool ví dụ như [Font Squirrel](https://www.fontsquirrel.com/tools/webfont-generator) để sinh định dạng khác nhau cho font của bạn
+
+* Bước 3: Sau khi tải định dạng đã được sinh ra, bạn định nghĩa @font-face cho loại font đó với các loại format khác nhau.
+
+## Sử dụng Online Font Service
+
+Các dịch vụ font online để lưu trữ và phục vụ các fonts cho bạn. Vì vậy bạn không cần phải lo lắng về việc viết code cho ```@font-face```, chỉ insert 1/2 dòng code vào trang của bạn là đủ. 
+
+Hầu hết các dịch vụ font online như vậy đều phải đăng ký, ngoại trừ các fonts của [Google fonts](https://fonts.google.com/) hoàn toàn miễn phí.
+
+### Các bước để thêm font service
+
+* Truy cập [Google fonts](https://fonts.google.com/)
+* Chọn font mà bạn muốn
+* Sau đó nhấn *[Number] Families Selected* ở phía dưới trang
+* Trên màn hình hiển thị HTML code, copy thẻ ```<link>``` và chèn vào trang HTML của bạn
+* Tiếp theo copy đoạn CSS cho ```font-family``` vào CSS mà bạn muốn.
