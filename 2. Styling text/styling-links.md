@@ -51,7 +51,7 @@ Firefox</a>, <a href="#">Google Chrome</a>, and
 <a href="#">Microsoft Edge</a>.</p>
 ```
 
-> **Thuộc tính ```outline``` thường được chỉ định với giá trị là ```none``` bởi vì các trình duyệt hiển thị thuộc tính khác nhau.**
+> **Thuộc tính ```outline``` trong selector ```a``` được chỉ định với giá trị là ```none``` bởi vì các trình duyệt hiển thị thuộc tính này theo cách khác nhau.**
 
 ## [Gắn thêm icon vào link như thế nào](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links)
 
